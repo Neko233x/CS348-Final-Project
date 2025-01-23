@@ -9,6 +9,12 @@ const port = 3000; // Define the port on which the server will run
 app.use(cors()); // Enable CORS to allow requests from different origins
 app.use(express.json()); // Parse JSON request bodies
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('<h1>Welcome</h1>'); // Display "Welcome" on the root page
+});
+
+
 // API Routes
 app.use('/api/dns', dnsRoutes); // Mount DNS-related routes at the /api/dns endpoint
 
